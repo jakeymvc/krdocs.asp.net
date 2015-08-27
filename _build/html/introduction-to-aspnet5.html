@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ASP.NET 5 소개 &mdash; krdocs.asp.net 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="krdocs.asp.net 0.0.1 documentation" href="index.html"/>
+        <link rel="up" title="개념 정리" href="conceptual-overview.html"/>
+        <link rel="prev" title="개념 정리" href="conceptual-overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> krdocs.asp.net
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="conceptual-overview.html">개념 정리</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">ASP.NET 5 소개</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ASP.NET 5는 무엇인가?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">왜 ASP.NET 5를 만들었을까?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">애플리케이션 해부하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">서비스</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">미들웨어</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-root">웹 루트 (Web root)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">구성 (Configuration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">클라이언트 측 개발</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">krdocs.asp.net</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="conceptual-overview.html">개념 정리</a> &raquo;</li>
+      
+    <li>ASP.NET 5 소개</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/introduction-to-aspnet5.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="asp-net-5">
+<h1>ASP.NET 5 소개<a class="headerlink" href="#asp-net-5" title="제목 주소">¶</a></h1>
+<p>By Daniel Roth</p>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<p>ASP.NET 5를 설계 관점에서 한 마디로 설명하자면 ASP.NET의 심각한 재설계(significant redesign)라고 할 수 있다. 이번 주제는 ASP.NET 5 내의 새로운 개념을 소개하고 그 것들이 어떻게 현대적인 웹 앱을 개발하는데 도움이 되는지 설명하고자 한다.</p>
+<div class="section" id="id1">
+<h2>ASP.NET 5는 무엇인가?<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+<p>ASP.NET 5는 닷넷을 사용하여 현대적인 클라우드 기반의 웹 애플리케이션을 만들기 위한 새로운 오픈소스이자 크로스-플랫폼 프레임워크다. 우리는 클라우드에 배포되거나 자체 호스팅 서버(on-premise)에서 동작하는 앱을 위한 최적의 개발 프레임워크를 제공하기 위해 프레임워크를 바닥부터 다시 만들었다. ASP.NET 5는 최소한의 오버헤드만으로 모듈화된 컴포넌트들로 구성되어 있기 때문에 솔루션을 구성하면서 유연성을 유지할 수 있다. 뿐만아니라, 여러분은 ASP.NET 5 애플리이션을 윈도우, 맥, 리눅스에서 개발하고 실행할 수 있다. ASP.NET 5는 <a class="reference external" href="https://github.com/aspnet/home">GitHub</a> 의 오픈 소스이다.</p>
+</div>
+<div class="section" id="id2">
+<h2>왜 ASP.NET 5를 만들었을까?<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<p>ASP.NET 1.O의 최초 프리뷰가 나온 것이 어느 덧 15년 전의 일이다. 그 이래로 정말 많은 개발자들이 ASP.NET을 사용하여 훌륭한 웹 애플리케이션을 만들어 왔고 우리는 그 동안 수 많은 기능들을 추가하고 발전시켜왔다.</p>
+<p>ASP.NET 5에서 우리는 꽤 많은 아키텍쳐 변경을 통해 군더더기 없이 모듈화된 코어(core) 웹 프레임워크를 만들고 있다. ASP.NET 5는 System.Web.dll 을 과감히 버리고 대신, 잘게 요소화된 NuGet 패키지들에 기반해서 여러분의 요구에 최적화된 앱을 만들 수 있게 해준다. 이렇게 사용한 만큼 지불하는(pay-for-what-you-use) 모델을 채택함으로써 애플리케이션에서 외부로 노출되는 것들이 줄어들어 보안 측면에서 개선을 기할 수 있고, 서비스 하는 부담 또한 줄어들어 성능면에서 개선효과를 볼 수 있다.</p>
+<p>ASP.NET 5는 현대적인 웹 애플리케이션에 대한 필요를 염두에 두고 만들어졌다. 웹 사용자 인터페이스를 만드는 것, 클라이언트 측 프레임워크와 통합되는 Web API들을 만드는 것, 이런 개발 작업의 흐름이 하나의 통일된 스토리가 된다. ASP.NET 5는 또한 클라우드 준비된(cloud-ready) 프레임워크라고 할 수 있다. 환경 기반의 구성(environment-based configuration)을 도입하고, 빌트-인 종속성 주입(dependency injection)을 제공하기 때문이다.</p>
+<p>보다 광범위한 개발자들의 관심을 끌기 위해, ASP.NET 5는 윈도우, 맥, 리눅스에서 크로스-플랫폼 개발을 지원한다. 전체 ASP.NET 5 스택은 오픈 소스이고 커뮤니티의 기여와 참여를 장려하고 있다. 비주얼 스튜디오는 완벽한 커맨드-라인 인터페이스도 지원하면서도 새로운 애자일 프로젝트 시스템을 도입했다. 그 덕에 여러분이 선택한 툴을 사용해서 개발할 수 있게 되었다.</p>
+<p>정리하자면, 여러분은 ASP.NET 5에서 아래의 기초적인 개선사항들을 얻게 되었다.</p>
+<ul class="simple">
+<li>새롭게 경량화되고 모듈화된 HTTP 요청 파이프라인</li>
+<li>IIS 또는 여러분 자신의 프로세스에서 셀프 호스트할 수 있는 능력</li>
+<li>닷넷 코어에 기반한 진정한 sidy-by-side 앱 버전 관리(versioning)</li>
+<li>모든 기능이 NuGet 패키지 형태로 추가</li>
+<li>NuGet 패키지들을 생성하고 사용하는 것에 대한 통합된 지원</li>
+<li>웹 사용자 인터페이스와 웹 API를 위한 단일 웹 스택</li>
+<li>클라우드 준비된 환경 기반의 구성</li>
+<li>빌트-인 종속성 주입 기능</li>
+<li>현대적인 웹 개발을 단순화 시킨 새로운 툴링(tooling)</li>
+<li>윈도우, 맥, 리눅스에서 개발하고 실행할 수 있는 크로스-플랫폼</li>
+<li>오픈 소스와 커뮤니티 중심</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>애플리케이션 해부하기<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<p>ASP.NET 5 애플리케이션은 <a class="reference external" href="http://docs.asp.net/en/latest/dnx/overview.html">.NET Execution Environment (DNX)</a> 를 사용하여 작성되고 실행된다. 모든 ASP.NET 5 프로젝트는 곧 <em>DNX</em> 프로젝트이며 <a class="reference external" href="https://www.nuget.org/packages/Microsoft.AspNet.Hosting">ASP.NET Application Hosting</a> 패키지를 사용하여 통합된다.</p>
+<p>ASP.NET 5 애플리케이션은 <code class="docutils literal"><span class="pre">Startup</span></code> 클래스를 사용하여 정의된다.</p>
+<div class="highlight-c#"><div class="highlight"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Startup</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">ConfigureServices</span></code> 메서드는 애플리케이션에 사용될 서비스들을 정의하고 <code class="docutils literal"><span class="pre">Configure</span></code> 메서드는 요청 파이프라인을 구성할 미들웨어를 정의하는데 사용된다. 보다 자세한 사항은 <a class="reference external" href="http://docs.asp.net/en/latest/conceptual-overview/understanding-aspnet5-apps.html">Understanding ASP.NET 5 Web Apps</a> 아티클을 참조하자.</p>
+</div>
+<div class="section" id="id4">
+<h2>서비스<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<p>서비스는 애플리케이션에서 공통적으로 사용하고자 하는 목적의 컴포넌트다. 서비스들은 종속성 주입을 통해 사용이 가능하다. ASP.NET 5 는 간단한 빌트-인 제어 역전 (IoC) 컨테이너를 포함하고 있는데 생성자를 이용한 주입 방식을 기본으로 지원하고 있다. 그러나, 여러분이 사용하는 IoC 컨테이너로 쉽게 대체할 수도 있다. 자세한 내용은 <a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/dependency-injection.html">🔧 Dependency Injection</a> 아티클을 참조하자.</p>
+<p>ASP.NET 5 에서 서비스는 세 가지 종류(singleton, scoped, transient)로 구분된다. Transient 서비스는 컨테이너로부터 요청될 때마다 생성되고 Scoped 서비스는 현재 scope에 서비스가 존재하지 않을 때만 서비스를 생성한다. 웹 애플리케이션에서 컨테이너의 범주는 매 요청에 해당하므로 scoped 서비스는 요청 당 서비스로 생각할 수 있다. 반면, Singleton 서비스는 오직 한번만 생성된다.</p>
+</div>
+<div class="section" id="id5">
+<h2>미들웨어<a class="headerlink" href="#id5" title="제목 주소">¶</a></h2>
+<p>ASP.NET 5 에서는 <a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/middleware.html">🔧 Middleware</a> 를 사용하여 요청 파이프라인을 구성한다. ASP.NET 5 미들웨어는 <code class="docutils literal"><span class="pre">HttpContext</span></code> 에 대해 비동기 로직을 수행하고 선택적으로 다음 미들웨어를 호출하거나 요청 처리 작업을 중단한다. 일반적으로 미들웨어에 대응하는 <code class="docutils literal"><span class="pre">IApplicationBuilder</span></code> 의 확장 메서드를 <code class="docutils literal"><span class="pre">Configure</span></code> 메서드에서 호출하는 것으로 요청 파이프라인을 작성한다.</p>
+<p>ASP.NET 5 는 미리 작성된 풍부한 미들웨어를 제공한다. 아래는 그 중 일부이다.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/static-files.html">🔧 Working with Static Files</a></li>
+<li><a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/routing.html">🔧 Routing</a></li>
+<li><a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/diagnostics.html">Diagnostics</a></li>
+<li><a class="reference external" href="http://docs.asp.net/en/latest/security/index.html">Authentication</a></li>
+</ul>
+<p>여러분은 여러분만의 custom middleware 를 작성할 수도 있고 OWIN 기반의 미들웨어를 작성할 수도 있는데 OWIN과 관련하여 자세한 내용은 <a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/owin.html">OWIN</a> 아티클을 참조하자.</p>
+<p>서버
+&#8212;</p>
+<p>ASP.NET 애플리케이션 호스팅 모델은 요청을 직접 리스닝하지 않는다. 그 대신, HTTP 서버 구현에 의지하여 애플리케이션에 대한 요청을 (HttpContext 와 작용하는 기능적인 인터페이스들의 모음으로서) 표면화한다.</p>
+<p>ASP.NET 5 는 IIS에서 운영하거나 자신의 프로세스에서 셀프 호스팅하는 서버를 지원한다. 윈도우에서는 HTTP.sys 에 기반한 <a class="reference external" href="https://www.nuget.org/packages/Microsoft.AspNet.Server.WebListener">WebListener</a> 를 통해 IIS 밖에서 애플리케이션을 호스팅할 수 있다. 또한, 비 윈도우 환경에서도 크로스-플랫폼 <a class="reference external" href="https://www.nuget.org/packages/Kestrel">Kestrel</a> 웹 서버를 사용하여 여러분의 애플리케이션을 호스팅할 수 있다.</p>
+</div>
+<div class="section" id="web-root">
+<h2>웹 루트 (Web root)<a class="headerlink" href="#web-root" title="제목 주소">¶</a></h2>
+<p>애플리케이션의 웹 루트는 프로젝트의 루트라고 할 수 있다. 이 곳으로부터 예를 들면, 정적 파일에 대한 접근 시도 같은 HTTP 요청이 처리된다. ASP.NET 5 애플리케이션의 웹 루트는 project.json 파일의 “webroot” 속성을 사용하여 설정된다.</p>
+</div>
+<div class="section" id="configuration">
+<h2>구성 (Configuration)<a class="headerlink" href="#configuration" title="제목 주소">¶</a></h2>
+<p>ASP.NET 5는 간단한 이름-값 쌍을 다루는 새로운 구성모델을 사용하며 이 새 모델은 System.Configuration 또는 web.config 에 기반하지 않는다. 새 구성 모델은 구성 제공자(configuration provider)의 순차적인 집합에서 정보를 얻는다. 빌트-인 구성 제공자는 XML, JSON, INI 파일등 다양한 파일 형식을 지원하며 또한, 환경 기반의 구성을 가능케 하는 환경 변수도 지원한다. 여러분은 이와 더불어 사용자 정의 구성 제공자를 작성할 수도 있다. 개발환경, 운영환경 처럼 환경이 ASP.NET 5에서는 최고의 개념이고 환경 변수를 통해 설정될 수도 있다.</p>
+<div class="highlight-c#"><div class="highlight"><pre>// Setup configuration sources.
+var configuration = new Configuration()
+    .AddJsonFile(&quot;config.json&quot;)
+    .AddJsonFile($&quot;config.{env.EnvironmentName}.json&quot;, optional: true);
+if (env.IsEnvironment(&quot;Development&quot;))
+{
+    // This reads the configuration keys from the secret store.
+    // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
+    configuration.AddUserSecrets();
+}
+configuration.AddEnvironmentVariables();
+Configuration = configuration;
+</pre></div>
+</div>
+<p>새로운 구성모델에 대한 자세한 내용은 <a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/configuration.html">Configuration</a> 아티클을 참조하고 ASP.NET 5에서 환경과 관련된 작업에 대한 자세한 내용은 <a class="reference external" href="http://docs.asp.net/en/latest/fundamentals/environments.html">Working with Multiple Environments</a> 아티클을 참조하자.</p>
+</div>
+<div class="section" id="id6">
+<h2>클라이언트 측 개발<a class="headerlink" href="#id6" title="제목 주소">¶</a></h2>
+<p>ASP.NET 5는 클라이언트 측 프레임워크와 매끄럽게 통합되도록 설계되었고 <a class="reference external" href="https://angularjs.org/">AngularJS</a> , <a class="reference external" href="http://knockoutjs.com/">KnockoutJS</a> and <a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> 와 같은 프레임워크를 포함한다. 이와 관련하여 자세한 내용은 <a class="reference external" href="http://docs.asp.net/en/latest/client-side/index.html">Client-Side Development</a> 아티클을 참조하자.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="conceptual-overview.html" class="btn btn-neutral" title="개념 정리" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft. Translated by Jake Ryu.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
